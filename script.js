@@ -14,7 +14,7 @@ var numberWrong = 0;
 var scores = [];
 
 // Timer setup
-var quizTimerLength = 100;
+var quizTimerLength = 45;
 var timerElement = document.querySelector('.timer');
 timerElement.innerHTML = `<span>${quizTimerLength} </span>`;
 
@@ -73,7 +73,6 @@ function leaderBoard() {
   returnButton.addEventListener('click', reload);
 
 
-
   var score = {
     name: 'Patrick',
     score: 999,
@@ -108,39 +107,37 @@ function saveToLocalStorage(scoresArray) {
 // Questions for Quiz
 var questions = [
   {
-    text: 'Arrays in Javascript can be used to store _______',
+    text: 'Inside which HTML element do we put the JavaScript? _______',
     answers: [
-      { text: '1.  Question 1', value: false },
-      { text: '2.  Other arrays', value: false },
-      { text: '3.  Booleans', value: false },
-      { text: '4.  All of the above', value: true },
+      { text: '1.  <javascript>', value: false },
+      { text: '2.  <script>', value: true },
+      { text: '3.  <js>', value: false },
+      { text: '4.  <scripting>', value: false },
     ],
   },
   {
-    text: 'Dogs like to eat _______',
+    text: 'Where is the correct place to insert a JavaScript? _______',
     answers: [
-      { text: '1.  Question 2', value: false },
-      { text: '2.  Other arrays', value: false },
-      { text: '3.  Booleans', value: false },
-      { text: '4.  All of the above', value: true },
+      { text: '1.  The <head> section', value: false },
+      { text: '2.  The <body> section', value: true },
+      { text: '3.  Bot the <head> and the <body> section', value: false },
     ],
   },
   {
-    text: 'Fish are _______',
+    text: 'What is the correct syntax for referring to an external script called "xxx.js"? _______',
     answers: [
-      { text: '1.  Question 3', value: false },
-      { text: '2.  Other arrays', value: false },
-      { text: '3.  Booleans', value: false },
-      { text: '4.  All of the above', value: true },
+      { text: '1.  <script src="xxx.js">', value: true },
+      { text: '2.  <script href="xxx.js">', value: false },
+      { text: '3.  <script name="xxx.js">', value: false },
     ],
   },
   {
-    text: 'Pickles taste like _______',
+    text: 'How do you write "Hello World" in an alert box? _______',
     answers: [
-      { text: '1.  Question 4', value: false },
-      { text: '2.  Other arrays', value: false },
-      { text: '3.  Booleans', value: false },
-      { text: '4.  All of the above', value: true },
+      { text: '1.  alertBox("Hello World")', value: false },
+      { text: '2.  msg("Hello World")', value: false },
+      { text: '3.  alert("Hello World")', value: true },
+      { text: '4.  msgBox("Hello World")', value: false },
     ],
   },
 ];
@@ -176,12 +173,9 @@ function checkAnswers(e) {
     answerResult.classList.remove('hide');
     answerResult.classList.add('h4');
 
-    // Disable button answered wrong and change to not-allowed
-    selectedAnswerButton.setAttribute('disabled', 'disabled');
-    selectedAnswerButton.style = 'cursor: not-allowed;';
-
     // Increment numberWrong
     numberWrong += 1;
+    console.log('numberWrong:', numberWrong)
 
     // subtract 10 seconds from quiz timer for wrong answer
     quizTimerLength -= 10;

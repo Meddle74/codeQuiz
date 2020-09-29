@@ -27,6 +27,8 @@
 
   .timer {
     display: inline-block;
+    font-size: 30px;
+    color: green;
     margin: 0.5rem;
     position: absolute;
     top: 0;
@@ -46,16 +48,14 @@
 <body>
   <div class="timer"></div>
   <div class="leaderboardButton">
-    <a class="viewLeaderboard" href="#">View Highscores</a>
+    <a class="viewLeaderboard" href="#">View Leaderboard</a>
   </div>
   <div class="container text-center mt-3">
     <header>
-      <h1>Code Quiz</h1>
+      <h1 style="color:indigo;">Code Quiz</h1>
     </header>
-    <p class="instructions">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="instructions" style="font-size: large;">Try to answer the following code-related questions within the time limit.<Br>  
+      Keep in mind that incorrect answwers will penalize the scoreTimer by ten seconds!</p>
     <div class="row">
       <div class="hide" id="questionArea"></div>
     </div>
