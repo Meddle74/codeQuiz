@@ -42,10 +42,6 @@ function displayTimer(element, seconds) {
   }, 1000);
 }
 
-function reload(){
-  location.reload()
-}
-
 function leaderBoard() {
   // Grab container and clear
   var container = document.querySelector('.container');
@@ -65,14 +61,6 @@ function leaderBoard() {
   var list = document.createElement('ol');
   list.style = 'width: 10rem; margin: 0 auto; text-align: left;';
 
-
-  var returnButton = document.createElement('a')
-  returnButton.innerText = 'Return to Main';
-  highscores.appendChild(returnButton);
-
-  returnButton.addEventListener('click', reload);
-
-
   var score = {
     name: 'Patrick',
     score: 999,
@@ -87,6 +75,31 @@ function leaderBoard() {
   sortedScores.forEach((scoreEntry) => (list.innerHTML += `<li>${scoreEntry.name} - ${scoreEntry.score}</li>`));
 
   container.appendChild(list);
+
+  // Add Return Button
+  var returnButton = document.createElement('button');
+  returnButton.innerText = 'Return to Main';
+  returnButton.classList.add('mt-3', 'btn', 'btn-success');
+  container.appendChild(returnButton);
+  
+  // Return To Main Page
+  returnButton.addEventListener('click', function(){
+    window.location.href ='index.html'
+  })
+
+  //Add Clear Scores Button
+  var clearButton = document.createElement('button');
+  clearButton.innerText = 'Clear Scores';
+  clearButton.classList.add('mt-3', 'ml-3', 'btn', 'btn-danger');
+  container.appendChild(clearButton);
+
+  //Reload Page
+  clearButton.addEventListener('click', function(){
+    localStorage.removeItem('scores');
+    window.location.reload() // need to fix this to not go to main page just to refresh with empty array?
+  })
+  
+
   saveToLocalStorage(sortedScores);
 }
 
