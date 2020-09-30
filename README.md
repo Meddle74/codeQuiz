@@ -24,4 +24,4 @@ Project is created with:
 
 ## Link to deployed application 
 
-[Code Quiz](https://www.google.com)
+[Code Quiz](https://meddle74.github.io/codeQuiz/index.html)
