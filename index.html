@@ -1,78 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Quiz</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Code Quiz</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+  </head>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-</head>
+  <style>
+    hr {
+      height: 1px;
+      border: none;
+      color: #000;
+      background-color: #000;
+      width: 100%;
+      text-align: left;
+      margin: 25px 0;
+    }
 
-<style>
-  hr {
-    height: 1px;
-    border: none;
-    color: #000;
-    background-color: #000;
-    width: 100%;
-    text-align: left;
-    margin: 25px 0;
-  }
+    .hide {
+      display: none;
+    }
 
-  .hide {
-    display: none;
-  }
+    .timer {
+      display: inline-block;
+      font-size: 30px;
+      color: green;
+      margin: 0.5rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
 
-  .timer {
-    display: inline-block;
-    font-size: 30px;
-    color: green;
-    margin: 0.5rem;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
+    .viewLeaderboard {
+      display: inline-block;
+      margin: 0.5rem;
+    }
 
-  .viewLeaderboard {
-    display: inline-block;
-    margin: 0.5rem;
-  }
+    .viewLeaderboard:hover {
+      text-decoration: none;
+    }
+  </style>
 
-  .viewLeaderboard:hover {
-    text-decoration: none;
-  }
-</style>
-
-<body>
-  <div class="timer"></div>
-  <div class="leaderboardButton">
-    <a class="viewLeaderboard" href="#">View Leaderboard</a>
-  </div>
-  <div class="container text-center mt-3">
-    <header>
-      <h1 style="color:indigo;">Code Quiz</h1>
-    </header>
-    <p class="instructions" style="font-size: large;">Try to answer the following code-related questions within the time limit.<Br>  
-      Keep in mind that incorrect answwers will penalize the scoreTimer by ten seconds!</p>
-    <div class="row">
-      <div class="hide" id="questionArea"></div>
+  <body>
+    <div class="timer"></div>
+    <div class="leaderboardButton">
+      <a class="viewLeaderboard" href="#">View Leaderboard</a>
     </div>
+    <div class="container text-center mt-3">
+      <header>
+        <h1 style="color: indigo">Code Quiz</h1>
+      </header>
+      <p class="instructions" style="font-size: large">
+        Try to answer the following code-related questions within the time
+        limit.<br />
+        Keep in mind that incorrect answwers will penalize the scoreTimer by ten
+        seconds!
+      </p>
+      <div class="row">
+        <div class="hide" id="questionArea"></div>
+      </div>
 
-    <div class="row" id="answerRow"></div>
-    <hr />
-    <div class="row">
-      <div id="answerResult"></div>
+      <div class="row" id="answerRow"></div>
+      <hr />
+      <div class="row">
+        <div id="answerResult"></div>
+      </div>
+      <button type="button" class="hide btn btn-warning float-right" id="next">
+        Next Question
+      </button>
+      <button type="button" class="btn btn-primary mt-3" id="start">
+        Start The Quiz
+      </button>
     </div>
-    <button type="button" class="hide btn btn-warning float-right" id="next">
-      Next Question
-    </button>
-    <button type="button" class="btn btn-primary mt-3" id="start">
-      Start The Quiz
-    </button>
-  </div>
-  <script src="./script.js"></script>
-</body>
-
+    <script src="./script.js"></script>
+  </body>
 </html>
